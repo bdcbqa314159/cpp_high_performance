@@ -1,0 +1,20 @@
+project(chapter06)
+
+set(my_exe ${PROJECT_NAME}_exe)
+
+set(my_sources
+    student.cpp
+    span.cpp
+    range_views.cpp
+    materialize_views.cpp
+    understanding_views.cpp
+    string_view.cpp
+    main.cpp)
+
+set(my_include ./)
+
+add_executable(${my_exe} ${my_sources})
+target_include_directories(${my_exe} PUBLIC ${my_include})
+target_link_libraries(${my_exe} GTest::gtest)
+
+# add_subdirectory(benchmarks)
